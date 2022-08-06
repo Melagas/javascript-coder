@@ -1,32 +1,53 @@
-// Desafío complementario 2 Objetos y arrays y primera entrega 
+// Array y objetos
 
 class Productos {
-    constructor(id, producto, precio, esmalte, linea) {
+    constructor(id, nombre, precio, esmalte, linea, imagen) {
         this.id = id,
-            this.producto = producto,
-            this.precio = precio,
-            this.esmalte = esmalte,
-            this.linea = linea
+        this.nombre = nombre,
+        this.precio = precio,
+        this.esmalte = esmalte,
+        this.linea = linea,
+        this.imagen = imagen
     }
     //Métodos
     mostrarProductos() {
-        console.log(`${this.id} El producto es ${this.producto} el precio en pesos es ${this.precio}, esmalte ${this.esmalte} y la linea de diseño ${this.linea}`)
+        console.log(`${this.id} El producto es ${this.nombre} el precio en pesos es ${this.precio}, esmalte ${this.esmalte} y la linea de diseño ${this.linea} la imagen es ${this.imagen}`)
     }
 }
 
 //Instanciación
-const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores")
-const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa")
-const producto3 = new Productos(3, "Bandeja corazón con pajaríto", 1500, "Nacional", "Animales")
-const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa")
-const producto5 = new Productos(5, "Juego de azucarera y yerbera", 3000, "Duncan", "Flores")
-const producto6 = new Productos(6, "Bandeja ovalada con pajaríto", 1500, "Duncan", "Animales")
-const producto7 = new Productos(7, "Saumerio con flores", 900, "Nacional", "Flores")
-const producto8 = new Productos(8, "Juego de tazas trigo", 4000, "Duncan", "Flores")
-const producto9 = new Productos(9, "Ensaladera con picaflor", 2500, "Duncan", "Animales")
+const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "img/mate-flores.jpg")
+const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa", "img/azucarera-mariposas.jpg")
+const producto3 = new Productos(3, "Bandeja corazón con pajaríto", 1500, "Nacional", "Animales", "img/bandeja-corazon-pajarito.jpg")
+const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa", "img/provoletera.jpg")
+const producto5 = new Productos(5, "Juego de azucarera y yerbera", 3000, "Duncan", "Flores", "img/azucareras-flores.jpg")
+const producto6 = new Productos(6, "Bandeja ovalada con pajaríto", 1500, "Duncan", "Animales", "img/bandeja-pajarito.jpg")
+const producto7 = new Productos(7, "Saumerio con flores", 900, "Nacional", "Flores", "img/saumerio.jpg")
+const producto8 = new Productos(8, "Juego de tazas trigo", 4000, "Duncan", "Flores", "img/tazas-fores.jpg")
+const producto9 = new Productos(9, "Ensaladera con picaflor", 2500, "Duncan", "Animales", "img/foto-pagina-principal.jpg")
 
 const stock = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9]
 console.log(stock)
+
+//Plantilla de Productos   
+
+let divProductos = document.getElementById ("productos")
+divProductos.setAttribute("class", "productosEstilos")
+stock.forEach((producto)=>{
+    let nuevoProducto = document.createElement("div")
+    nuevoProducto.innerHTML = `<article id="${producto.id}" class="cards">
+        <h3 class="tituloCard">${producto.nombre}</h3>
+        <img src="${producto.imagen}" alt="" class="imgCard">
+        <div class="content">
+            <p class="precioCard"><b>Precio:</b>  ${producto.precio}</p>
+            <p class="lineaCard"><b>Linea:</b> ${producto.linea}</p>
+            <p class="esmalteCard"><b>Esmalte:</b> ${producto.esmalte}</p>
+            <a href=""target="blank"><strong>Agregar al carrito</strong></a>
+        </div>
+    </article>
+    `
+    divProductos.appendChild(nuevoProducto)
+})
 
 //FUNCIONES
 //Funcion de agregar un producto nuevo
@@ -107,3 +128,5 @@ let salir
 while (salir != true) {
     preguntarOpcion()
 }
+
+
