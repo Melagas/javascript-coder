@@ -3,11 +3,11 @@
 class Productos {
     constructor(id, nombre, precio, esmalte, linea, imagen) {
         this.id = id,
-        this.nombre = nombre,
-        this.precio = precio,
-        this.esmalte = esmalte,
-        this.linea = linea,
-        this.imagen = imagen
+            this.nombre = nombre,
+            this.precio = precio,
+            this.esmalte = esmalte,
+            this.linea = linea,
+            this.imagen = imagen
     }
     //Métodos
     mostrarProductos() {
@@ -18,7 +18,7 @@ class Productos {
 //Instanciación
 const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "img/mate-flores.jpg")
 const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa", "img/azucarera-mariposas.jpg")
-const producto3 = new Productos(3, "Juego de mate y bandeja ", 1500, "Nacional", "Animales", "img/juego-mate-bandeja.jpg")
+const producto3 = new Productos(3, "Juego de mate y bandeja ", 1500, "Nacional", "Animales", "img/juego-mate-bandeja.JPG")
 const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa", "img/provoletera.jpg")
 const producto5 = new Productos(5, "Juego de azucarera y yerbera", 3000, "Duncan", "Flores", "img/azucareras-flores.jpg")
 const producto6 = new Productos(6, "Bandeja ovalada con pajaríto", 1500, "Duncan", "Animales", "img/bandeja-pajarito.jpg")
@@ -31,9 +31,9 @@ console.log(stock)
 
 //Plantilla de Productos   
 
-let divProductos = document.getElementById ("productos")
+let divProductos = document.getElementById("productos")
 divProductos.setAttribute("class", "productosEstilos")
-stock.forEach((producto)=>{
+stock.forEach((producto) => {
     let nuevoProducto = document.createElement("div")
     nuevoProducto.innerHTML = `<article id="${producto.id}" class="cards">
         <h3 class="tituloCard">${producto.nombre}</h3>
@@ -128,5 +128,3 @@ let salir
 while (salir != true) {
     preguntarOpcion()
 }
-
-

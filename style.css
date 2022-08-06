@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
     background-color: #f8afc9;
     border-radius: .2rem;
@@ -16,15 +16,16 @@ a{
     padding: .2rem;
 }
 
-a :hover{
-    filter:saturate(180%); ;
+a :hover {
+    filter: saturate(180%);
+    ;
 }
 
 .headerEstilo {
     background-color: #fbf4e0;
 }
 
-#tituloPrincipal{
+#tituloPrincipal {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -39,10 +40,10 @@ a :hover{
 
 .productosEstilos {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.cards{
+.cards {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,10 +54,10 @@ a :hover{
     background-color: #fdfff7;
     margin: .5rem;
     padding: .5rem;
-    border-radius: .5em; 
+    border-radius: .5em;
 }
 
-.tituloCard{
+.tituloCard {
     font-family: Nunito;
     display: flex;
     flex-direction: row;
@@ -65,24 +66,24 @@ a :hover{
     gap: 0%;
 }
 
-.imgCard{
+.imgCard {
     width: auto;
     height: 20em;
     border-radius: .5em;
-    margin: .5rem; 
+    margin: .5rem;
 }
 
-.precioCard{
-text-align: center;
-font-family: "Open Sans";
+.precioCard {
+    text-align: center;
+    font-family: "Open Sans";
 }
 
-.lineaCard{
-text-align: center;
-font-family: "Open Sans";
+.lineaCard {
+    text-align: center;
+    font-family: "Open Sans";
 }
 
-.esmalteCard{
-text-align: center;
-font-family: "Open Sans";
+.esmalteCard {
+    text-align: center;
+    font-family: "Open Sans";
 }
