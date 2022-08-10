@@ -16,7 +16,23 @@
         </h1>
     </header>
     <main class="mainEstilo">
-        <div id="productos"></div>
+        <div class="boxConsulta">
+            <h2 class="tituloForm">Formulario de consulta</h2>
+            <form>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" class="imputs" id="nombresImput" name="nombre"><br>
+                <label for="apellido">Apellido</label><br>
+                <input type="text" class="imputs" id="apellidosImput" name="apellido"><br>
+                <label for="consulta">Ingrese consulta:</label><br>
+                <input type="text" class="imputs" id="consultaImput" name="consulta"><br>
+                <label for="telefono">Teléfono de contacto</label><br>
+                <input type="text" class="imputs" id="telefonoImput" name="telefono"><br>
+                <label for="lineas">Linea de interes:</label><br>
+                <input type="text" class="imputs" id="lineasImput" name="lineas">
+            </form>
+            <button id="guardarDatosBtn">Enviar datos</button>
+            <button id="botonVerCatalogo" class="boton">Ver Catálogo</button>
+            <div id="productos"></div>
     </main>
     <script src="miarchivo.js"></script>
 </body>

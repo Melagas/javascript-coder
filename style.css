@@ -8,17 +8,99 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    background-color: #f8afc9;
-    border-radius: .2rem;
-    font-family: Nunito;
-    padding: .2rem;
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-a :hover {
-    filter: saturate(180%);
-    ;
+a {
+    text-decoration: none;
+    color: #fdfff7;
+}
+
+p {
+    margin: .2rem;
+}
+
+.imputs {
+    background-color: #fdfff7;
+    font-family: "Open Sans";
+    border-radius: .5em;
+    border: 2px solid transparent;
+}
+
+.boton {
+    font-family: Nunito;
+    background-color: #0d0106;
+    font-size: 1em;
+    color: #fdfff7;
+    border-radius: .5em;
+    padding: .5rem;
+    margin: .5rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.botonCarrito {
+    font-family: Nunito;
+    background-color: #0d0106;
+    font-size: 1em;
+    color: #fdfff7;
+    border-radius: .5em;
+    padding: .5rem;
+    margin: .5rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.tituloForm {
+    font-family: Nunito;
+    align-content: center;
+}
+
+#guardarDatosBtn {
+    font-family: Nunito;
+    background-color: #0d0106;
+    font-size: 1em;
+    color: #fdfff7;
+    border-radius: .5em;
+    padding: .5rem;
+    margin: .5rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+form {
+    background-color: #f8afc9;
+    margin: .5em;
+    border-radius: .5em;
+    padding: 1em;
+}
+
+.boxConsulta {
+    background-color: #fbf4e0;
+    font-family: "Open Sans";
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.botonCarrito:hover {
+    background-color: #f8afc9;
+    transition-duration: .4s;
 }
 
 .headerEstilo {
