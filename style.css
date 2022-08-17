@@ -8,6 +8,34 @@
     box-sizing: border-box;
 }
 
+#color-modal {
+    color: #0d0106;
+}
+
+#exampleModalLabel {
+    color: #0d0106;
+}
+
+#colorP {
+    color: #0d0106;
+}
+
+body {
+    background-color: #fbf4e0;
+    color: #0d0106;
+}
+
+.boxDarkMode {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.darkMode {
+    background-color: #1e1e24;
+    color: #fff8f0;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -16,25 +44,36 @@
 
 a {
     text-decoration: none;
-    color: #fdfff7;
+    color: #fff8f0;
 }
 
 p {
     margin: .2rem;
 }
 
-.imputs {
-    background-color: #fdfff7;
+.inputs {
+    background-color: #fff8f0;
     font-family: "Open Sans";
     border-radius: .5em;
     border: 2px solid transparent;
 }
 
+.boxTituloBoton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.estiloBtnCarrito {
+    width: 5em;
+    margin: 1rem;
+}
+
 .boton {
     font-family: Nunito;
-    background-color: #0d0106;
+    background-color: #006c67;
     font-size: 1em;
-    color: #fdfff7;
+    color: #fff8f0;
     border-radius: .5em;
     padding: .5rem;
     margin: .5rem;
@@ -47,9 +86,9 @@ p {
 
 .botonCarrito {
     font-family: Nunito;
-    background-color: #0d0106;
+    background-color: #006c67;
     font-size: 1em;
-    color: #fdfff7;
+    color: #fff8f0;
     border-radius: .5em;
     padding: .5rem;
     margin: .5rem;
@@ -67,9 +106,9 @@ p {
 
 #guardarDatosBtn {
     font-family: Nunito;
-    background-color: #0d0106;
+    background-color: #006c67;
     font-size: 1em;
-    color: #fdfff7;
+    color: #fff8f0;
     border-radius: .5em;
     padding: .5rem;
     margin: .5rem;
@@ -80,15 +119,19 @@ p {
     border: 2px solid transparent;
 }
 
+#guardarDatosBtn:hover {
+    background-color: #1e1e24;
+    transition-duration: .4s;
+}
+
 form {
-    background-color: #f8afc9;
+    background-color: #006c67;
     margin: .5em;
     border-radius: .5em;
     padding: 1em;
 }
 
 .boxConsulta {
-    background-color: #fbf4e0;
     font-family: "Open Sans";
     font-weight: bold;
     display: flex;
@@ -99,30 +142,43 @@ form {
 }
 
 .botonCarrito:hover {
-    background-color: #f8afc9;
+    background-color: #1e1e24;
     transition-duration: .4s;
 }
 
-.headerEstilo {
-    background-color: #fbf4e0;
+.boton:hover {
+    background-color: #1e1e24;
+    transition-duration: .4s;
+}
+
+#styleImporte {
+    color: #0d0106;
 }
 
 #tituloPrincipal {
+    color: #006c67;
+    font-size: 2em;
     display: flex;
     justify-content: center;
     align-content: center;
-    text-decoration: underline .2em #f8afc9;
     font-family: Nunito;
     padding: 2rem;
-}
-
-.mainEstilo {
-    background-color: #fbf4e0;
+    font-weight: bolder;
 }
 
 .productosEstilos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+#botonCarrito {
+    background-color: #1e1e24;
+    border-color: #1e1e24;
+}
+
+#botonCarrito:hover {
+    background-color: #006c67;
+    transition-duration: .4s;
 }
 
 .cards {
@@ -132,8 +188,8 @@ form {
     border-style: solid;
     align-content: center;
     align-items: center;
-    border-color: #f8afc9;
-    background-color: #fdfff7;
+    border-color: #006c67;
+    background-color: #fff8f0;
     margin: .5rem;
     padding: .5rem;
     border-radius: .5em;
@@ -168,4 +224,13 @@ form {
 .esmalteCard {
     text-align: center;
     font-family: "Open Sans";
+}
+
+.mainEstilo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 4rem;
 }
