@@ -116,6 +116,12 @@ function agregarAlCarrito(producto) {
     console.log(productosEnCarrito)
     //Cargar al storage
     localStorage.setItem("agregarCarrito", JSON.stringify(productosEnCarrito))
+    Swal.fire({
+        title: 'Agregado al carrito',
+        text: `el producto ${producto.nombre} se agregó al carrito`,
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
 }
 
 //Función de ocultar catálogo
@@ -144,7 +150,15 @@ function guardarProducto() {
     stock.push(productoCreado)
     //Local Storage (setItem para guardar y getItem para recuperar)
     localStorage.setItem("stock", JSON.stringify(stock))
+    myForm.reset(); //Agregué un reset al boton de guardar asi se limpia luego de almacenar en el localStorage
 }
+
+function limpiarFormulario() {
+    document.getElementById("myForm").reset(); //Agregué una funcion de limpiar el documento antes de ser mandado para mayor comodiad del usuario
+}
+
+const limpiarForm = document.getElementById("limpiarForm")
+limpiarForm.addEventListener("click", limpiarFormulario)
 
 //Capturo guardarLibro botón y asignamos evento
 const guardarBtn = document.getElementById("guardarDatosBtn")
@@ -188,7 +202,7 @@ function compraTotal(productosTotal) {
     acumulador = 0;
     //recorrer productosTotal
     productosTotal.forEach((productoCarrito) => {
-        acumulador += productoCarrito.precio
+       acumulador += (Number(productoCarrito.precio)) //Agregué Number para que lo reconzca como número y no se concatene.
     })
     console.log(acumulador)
     if (acumulador == 0) {
@@ -197,3 +211,4 @@ function compraTotal(productosTotal) {
         parrafoCompra.innerHTML = `<p id="styleImporte">Total: ${acumulador} $</p>`
     }
 }
+

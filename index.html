@@ -11,7 +11,7 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Workshop I</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body id="estiloBody">
@@ -50,7 +50,7 @@
     <main class="mainEstilo">
         <div class="boxConsulta">
             <h2 class="tituloForm">Ingresar producto nuevo</h2>
-            <form>
+            <form id="myForm">
                 <label for="nombre">Nombre del producto:</label><br>
                 <input type="text" class="inputs" id="nombreInput" name="nombre"><br>
                 <label for="precio">Precio:</label><br>
@@ -62,7 +62,10 @@
                 <!-- <label for="imagen">Adjuntar imagen:</label><br>
                 <input type="text" class="inputs" id="imagenInput" name="imagen"> -->
             </form>
+            <div class="btnBoxForm">
             <button id="guardarDatosBtn">Guardar</button>
+            <button id="limpiarForm" class="boton">Limpiar</button>
+            </div>
         </div>
         <div>
 
@@ -99,6 +102,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="miarchivo.js"></script>
 </body>
 

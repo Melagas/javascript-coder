@@ -234,3 +234,8 @@ form {
     align-items: center;
     padding: 4rem;
 }
+
+.btnBoxForm{
+    display: flex;
+    flex-direction: row;
+}
