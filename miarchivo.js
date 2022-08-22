@@ -72,6 +72,15 @@ if (localStorage.getItem("stock")) {
 }
 console.log(stock)
 
+//Desestructurar un ARRAY
+//Desestructuramos array
+let [a, , b, c] = stock
+a = "producto nuevo"
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(stock)
+
 //Elementos DOM 
 let botonCarrito = document.getElementById("botonCarrito")
 let modalBody = document.getElementById("modal-body")
@@ -112,16 +121,30 @@ function mostrarCatalogo() {
 //Funcion de agregar al carrito
 function agregarAlCarrito(producto) {
     console.log(`El producto ${producto.nombre} con N* de identificación ${producto.id} fue agregado al carrito`)
-    productosEnCarrito.push(producto)
-    console.log(productosEnCarrito)
-    //Cargar al storage
-    localStorage.setItem("agregarCarrito", JSON.stringify(productosEnCarrito))
-    Swal.fire({
-        title: 'Agregado al carrito',
-        text: `el producto ${producto.nombre} se agregó al carrito`,
-        icon: 'success',
-        confirmButtonText: 'Ok'
-      })
+    let productoAgregado = productosEnCarrito.find((elem) => (elem.id == producto.id))
+    console.log(productoAgregado)
+    console.log(productosEnCarrito);
+    if (productoAgregado == undefined) {
+        productosEnCarrito.push(producto)
+        console.log(productosEnCarrito)
+        //Cargar al storage
+        localStorage.setItem("agregarCarrito", JSON.stringify(productosEnCarrito))
+        //Se agregó sweet alert en producto agregado y para avisar que el mismo ya se encuentra en el carrito
+        Swal.fire({
+            title: 'Agregado al carrito',
+            text: `el producto ${producto.nombre} se agregó al carrito`,
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        })
+    } else {
+        console.log(`El producto ${producto.nombre} ya se encuentra en el carrito`)
+        Swal.fire({
+            title: 'Producto ya agregado',
+            text: `El producto ${producto.nombre} ya se encuentra en el carrito`,
+            icon: 'info',
+            confirmButtonText: 'Ok'
+        })
+    }
 }
 
 //Función de ocultar catálogo
@@ -163,6 +186,19 @@ limpiarForm.addEventListener("click", limpiarFormulario)
 //Capturo guardarLibro botón y asignamos evento
 const guardarBtn = document.getElementById("guardarDatosBtn")
 guardarBtn.addEventListener("click", guardarProducto)
+//se agregó Toastify para mostrar que al tocar guardar el producto se guardó con exito
+guardarBtn.addEventListener('click', () => {
+    Toastify({
+        text: "Producto guardado",
+        duration: 4000,
+        gravity: "bottom",
+        position: "right",
+        style: {
+            background: "#f8afc9",
+            color: "#1e1e24",
+        }
+    }).showToast();
+})
 
 //Stringify para subir y parse para traer (este último evita texto plano)
 let arrayJSON = JSON.stringify(stock)
@@ -170,12 +206,6 @@ localStorage.setItem("arrayJSON", arrayJSON)
 let arrayParse = JSON.parse(localStorage.getItem("arrayJSON"))
 console.log(arrayParse)
 
-
-
-//Evento botonCarrito
-botonCarrito.addEventListener('click', () => {
-    cargarProductosCarrito(productosEnCarrito)
-})
 
 //Función de cargar y mostrar productos en carrito
 function cargarProductosCarrito(productosDelStorage) {
@@ -187,28 +217,47 @@ function cargarProductosCarrito(productosDelStorage) {
                 <div class="card-body" id="color-modal">
                         <h4 class="card-title">${productoCarrito.nombre}</h4>
                         <p class="card-text">$${productoCarrito.precio}</p> 
-                        <button class= "btn btn-danger" id="botonEliminar"><i class="fas fa-trash-alt"></i></button>
+                        <button class= "btn btn-danger" id="btnEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
                 </div>    
             </div>
     `
     })
+    productosDelStorage.forEach((productoCarrito, agregados) => {
+        //capturamos el boton sin usar variable y adjuntamos evento
+        document.getElementById(`btnEliminar${productoCarrito.id}`).addEventListener('click', () => {
+            //Dentro del evento:
+            console.log(`Producto ${productoCarrito.nombre} eliminado`)
+            //Eliminamos del DOM
+            let cardProducto = document.getElementById(`productoCarrito${productoCarrito.id}`)
+            console.log(cardProducto);
+            cardProducto.remove()
+            //Eliminamos del array compras
+            productosEnCarrito.splice(agregados, 1)
+            console.log(productosEnCarrito)
+            localStorage.setItem("carrito", JSON.stringify(productosEnCarrito))
+            cargarProductosCarrito(productosEnCarrito)
+        })
+
+    })
     //Función del total
     //productosEnCarrito
-    compraTotal(productosDelStorage)
+    compraTotal(...productosDelStorage)
 }
 
-//Sumar productos en carrito
-function compraTotal(productosTotal) {
+//Evento botonCarrito
+botonCarrito.addEventListener('click', () => {
+    cargarProductosCarrito(productosEnCarrito)
+})
+
+//Sumar productos en carrito + Spread y reduce
+function compraTotal(...productosTotal) {
     acumulador = 0;
     //recorrer productosTotal
-    productosTotal.forEach((productoCarrito) => {
-       acumulador += (Number(productoCarrito.precio)) //Agregué Number para que lo reconzca como número y no se concatene.
-    })
+    acumulador = productosTotal.reduce((acumulador, productoCarrito) => {
+        return acumulador + (Number(productoCarrito.precio)) //se agregó number para que no concatene
+    }, 0)
     console.log(acumulador)
-    if (acumulador == 0) {
-        parrafoCompra.innerHTML = `<p>El carrito esta vacio</p>`
-    } else {
-        parrafoCompra.innerHTML = `<p id="styleImporte">Total: ${acumulador} $</p>`
-    }
+    //Operador Ternario
+    acumulador > 0 ? parrafoCompra.innerHTML = `<p id="styleImporte">Total: ${acumulador} $</p>` :
+        parrafoCompra.innerHTML = `<p id="styleMensajeCarrito">El carrito esta vacio</p>`
 }
-

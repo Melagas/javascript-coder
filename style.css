@@ -25,10 +25,25 @@ body {
     color: #0d0106;
 }
 
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    padding-left: 20rem;
+}
+
+.logo__image {
+    width: 15em;
+    cursor: pointer;
+}
+
 .boxDarkMode {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
 }
 
 .darkMode {
@@ -71,7 +86,7 @@ p {
 
 .boton {
     font-family: Nunito;
-    background-color: #006c67;
+    background-color: #8f2d56;
     font-size: 1em;
     color: #fff8f0;
     border-radius: .5em;
@@ -86,7 +101,7 @@ p {
 
 .botonCarrito {
     font-family: Nunito;
-    background-color: #006c67;
+    background-color: #8f2d56;
     font-size: 1em;
     color: #fff8f0;
     border-radius: .5em;
@@ -106,7 +121,7 @@ p {
 
 #guardarDatosBtn {
     font-family: Nunito;
-    background-color: #006c67;
+    background-color: #8f2d56;
     font-size: 1em;
     color: #fff8f0;
     border-radius: .5em;
@@ -125,7 +140,7 @@ p {
 }
 
 form {
-    background-color: #006c67;
+    background-color: #8f2d56;
     margin: .5em;
     border-radius: .5em;
     padding: 1em;
@@ -156,7 +171,7 @@ form {
 }
 
 #tituloPrincipal {
-    color: #006c67;
+    color: #8f2d56;
     font-size: 2em;
     display: flex;
     justify-content: center;
@@ -177,7 +192,7 @@ form {
 }
 
 #botonCarrito:hover {
-    background-color: #006c67;
+    background-color: #8f2d56;
     transition-duration: .4s;
 }
 
@@ -188,7 +203,7 @@ form {
     border-style: solid;
     align-content: center;
     align-items: center;
-    border-color: #006c67;
+    border-color: #8f2d56;
     background-color: #fff8f0;
     margin: .5rem;
     padding: .5rem;
@@ -235,7 +250,11 @@ form {
     padding: 4rem;
 }
 
-.btnBoxForm{
+.btnBoxForm {
     display: flex;
     flex-direction: row;
+}
+
+#styleMensajeCarrito {
+    color: #0d0106;
 }
