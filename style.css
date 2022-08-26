@@ -8,6 +8,30 @@
     box-sizing: border-box;
 }
 
+#footerStyle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #8f2d56;
+}
+
+#liStyle{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+#colorBlack{
+    color: #0d0106;
+    font-weight: bold;
+    font-family: Nunito;
+    padding-right: 5rem;
+}
+
+.tituloCard {
+    color: #0d0106;
+}
+
 #color-modal {
     color: #0d0106;
 }
@@ -25,19 +49,31 @@ body {
     color: #0d0106;
 }
 
+h5 {
+    display: flex;
+    justify-content: center;
+
+}
+
 .container-fluid {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+#styleUl {
+    margin-bottom: 0;
 }
 
 .logo {
     display: flex;
-    padding-left: 20rem;
+    justify-content: center;
 }
 
 .logo__image {
-    width: 15em;
+    width: 16em;
     cursor: pointer;
 }
 
@@ -49,6 +85,11 @@ body {
 .darkMode {
     background-color: #1e1e24;
     color: #fff8f0;
+}
+
+.lightMode {
+    background-color: #fff8f0;
+    color: #0d0106;
 }
 
 .content {
@@ -86,7 +127,22 @@ p {
 
 .boton {
     font-family: Nunito;
-    background-color: #8f2d56;
+    background-color: #0d0106;
+    font-size: 1em;
+    color: #fff8f0;
+    border-radius: .5em;
+    padding: .5rem;
+    margin: .5rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.botonInvertido {
+    font-family: Nunito;
+    background-color: #0d0106;
     font-size: 1em;
     color: #fff8f0;
     border-radius: .5em;
@@ -101,7 +157,7 @@ p {
 
 .botonCarrito {
     font-family: Nunito;
-    background-color: #8f2d56;
+    background-color: #0d0106;
     font-size: 1em;
     color: #fff8f0;
     border-radius: .5em;
@@ -121,7 +177,7 @@ p {
 
 #guardarDatosBtn {
     font-family: Nunito;
-    background-color: #8f2d56;
+    background-color: #0d0106;
     font-size: 1em;
     color: #fff8f0;
     border-radius: .5em;
@@ -135,15 +191,16 @@ p {
 }
 
 #guardarDatosBtn:hover {
-    background-color: #1e1e24;
+    background-color: #8f2d56;
     transition-duration: .4s;
 }
 
 form {
-    background-color: #8f2d56;
+    background-color: #f8afc9;
     margin: .5em;
     border-radius: .5em;
-    padding: 1em;
+    padding: .7rem;
+    color:#fff8f0;
 }
 
 .boxConsulta {
@@ -157,12 +214,17 @@ form {
 }
 
 .botonCarrito:hover {
-    background-color: #1e1e24;
+    background-color: #8f2d56;
     transition-duration: .4s;
 }
 
 .boton:hover {
-    background-color: #1e1e24;
+    background-color: #8f2d56;
+    transition-duration: .4s;
+}
+
+.botonInvertido:hover {
+    background-color: #8f2d56;
     transition-duration: .4s;
 }
 
@@ -194,6 +256,12 @@ form {
 #botonCarrito:hover {
     background-color: #8f2d56;
     transition-duration: .4s;
+}
+
+#navStyle{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 }
 
 .cards {
@@ -256,5 +324,12 @@ form {
 }
 
 #styleMensajeCarrito {
+    font-family: Nunito;
     color: #0d0106;
+}
+
+.boxFormBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

@@ -55,7 +55,7 @@ const producto7 = new Productos(7, "Saumerio con flores", 900, "Nacional", "Flor
 const producto8 = new Productos(8, "Juego de tazas trigo", 4000, "Duncan", "Flores", "img/tazas-fores.jpg")
 const producto9 = new Productos(9, "Ensaladera con picaflor", 2500, "Duncan", "Animales", "img/foto-pagina-principal.jpg")
 
-//Declarar arrays
+// //Declarar arrays
 let stock = []
 // Optimización OR
 let productosEnCarrito = JSON.parse(localStorage.getItem("agregarCarrito")) || []
@@ -89,6 +89,8 @@ let parrafoCompra = document.getElementById('precioTotal')
 let acumulador
 let divProductos = document.getElementById("productos")
 divProductos.setAttribute("class", "productosEstilos")
+let inputBuscar = document.getElementById("buscador")
+let btnBuscar = document.getElementById("btnBuscar")
 
 //FUNCIONES Y BOTONES 
 //Funcion mostrar catálogo
@@ -105,7 +107,7 @@ function mostrarCatalogo() {
             <p class="esmalteCard"><b>Esmalte:</b> ${producto.esmalte}</p>
             <button id="btnAgregarCarrito${producto.id}" class="botonCarrito">Agregar al carrito</button>
         </div>
-        </article>`
+    </article>`
         divProductos.appendChild(nuevoProducto)
 
         //Botón de agregar al carrito
@@ -152,13 +154,34 @@ function ocultarCatalogo() {
     divProductos.innerHTML = ""
 }
 
-//Botón mostar catálogo
-let mostrarCatalogoBtn = document.getElementById("botonVerCatalogo")
-mostrarCatalogoBtn.addEventListener("click", mostrarCatalogo)
-
 //Botón ocultar catálogo
 let ocultarCatalogoBtn = document.getElementById("botonOcultarCatalogo")
 ocultarCatalogoBtn.onclick = ocultarCatalogo
+
+
+//Función de cargar catálogo
+function cargarProdutosStock() {
+    setTimeout(() => {
+        mostrarCatalogo(stock)
+    }, 2000)
+}
+
+//Botón mostrar catálogo
+let mostrarCatalogoBtn = document.getElementById("botonVerCatalogo")
+mostrarCatalogoBtn.addEventListener("click", (() => {
+    Toastify({
+        text: "Cargando Productos...",
+        duration: 2000,
+        gravity: "bottom",
+        position: "right",
+        style: {
+            background: "#f8afc9",
+            color: "#1e1e24",
+        }
+    }).showToast();
+    cargarProdutosStock()
+}))
+
 
 //Función que permita al usuario agregar un libro 
 function guardarProducto() {
@@ -212,11 +235,11 @@ function cargarProductosCarrito(productosDelStorage) {
     modalBody.innerHTML = " "
     productosDelStorage.forEach((productoCarrito) => {
         modalBody.innerHTML += `
-            <div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 540px;">
+            <div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 500px">
                 <img class="card-img-top" src="${productoCarrito.imagen}" alt="${productoCarrito.nombre}">
                 <div class="card-body" id="color-modal">
-                        <h4 class="card-title">${productoCarrito.nombre}</h4>
-                        <p class="card-text">$${productoCarrito.precio}</p> 
+                        <h4 style="font-family: Nunito;" class="card-title">${productoCarrito.nombre}</h4>
+                        <p style="font-family: Nunito;" class="card-text">$${productoCarrito.precio}</p> 
                         <button class= "btn btn-danger" id="btnEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
                 </div>    
             </div>
@@ -258,6 +281,68 @@ function compraTotal(...productosTotal) {
     }, 0)
     console.log(acumulador)
     //Operador Ternario
-    acumulador > 0 ? parrafoCompra.innerHTML = `<p id="styleImporte">Total: ${acumulador} $</p>` :
+    acumulador > 0 ? parrafoCompra.innerHTML = `<p id="styleImporte" style="font-family: Nunito;">Total: ${acumulador} $</p>` :
         parrafoCompra.innerHTML = `<p id="styleMensajeCarrito">El carrito esta vacio</p>`
 }
+
+//Boton de busqueda
+btnBuscar.addEventListener('click', () => {
+    //function de buscado
+    event.preventDefault()
+    console.log("click");
+    console.log(inputBuscar.value.toLowerCase());
+    let productoBuscado = stock.filter(producto => (producto.nombre.toLowerCase() == inputBuscar.value.toLowerCase()))
+    console.log(productoBuscado);
+    if (productoBuscado.length == 0) {
+        console.log(`No hay coincidencia`);
+        mostrarCatalogo(stock)
+    } else {
+        mostrarCatalogo(productoBuscado)
+
+    }
+})
+
+//Función finalizar compra  y botones de confirmación
+function finalizarCompra(){
+    Swal.fire({
+        title: 'Está seguro de realizar la compra',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+        confirmButtonColor: '#006c67',
+        cancelButtonColor: '#8f2d56',
+    }).then((result) => {
+        let DateTime = luxon.DateTime
+        const dt = DateTime.now()
+        let fecha = `Siendo las ${dt.toLocaleString(DateTime.TIME_SIMPLE)} del ${dt.toLocaleString(DateTime.DATE_FULL)}`
+    if (result.isConfirmed) {
+        Swal.fire({
+            title: 'Compra exitosa',
+            icon: 'success',
+            confirmButtonColor: '#006c67',
+            text: `Muchas gracias por su compra`,
+            footer: `<p>${fecha} pronto nos comunicaremos con usted</p>`
+        })
+        //Ahora pusimos el código dentro del THEN para que se ejecute en caso de que result sea confirmado. 
+        productosEnCarrito = []
+        localStorage.removeItem('carrito')
+        //Mostramos total
+        console.log(`El total de su compra es ${acumulador}`)
+        //Volvemos a cargar el modal con el array vacío por lo que quedará sin nada
+        cargarProductosCarrito(productosEnCarrito)
+        }
+        else{
+            Swal.fire({
+                title: 'Compra no realizada',
+                icon: 'info',
+                text: `La compra no ha sido realizada! Atención sus productos siguen en el carrito :D`,
+                confirmButtonColor: '#006c67',
+                timer:3500
+            })
+        }
+    })}
+
+    botonFinalizarCompra.addEventListener('click',()=>{
+        finalizarCompra()
+    })
