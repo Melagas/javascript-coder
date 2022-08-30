@@ -54,63 +54,46 @@
             </div>
         </nav>
     </header>
-    <main class="mainEstilo">
-        <div class="boxConsulta">
-            <h2 class="tituloForm">Ingresar producto nuevo</h2>
-            <form id="myForm">
-                <label for="nombre">Nombre del producto:</label><br>
-                <input type="text" class="inputs" id="nombreInput" name="nombre"><br>
-                <label for="precio">Precio:</label><br>
-                <input type="text" class="inputs" id="precioInput" name="precio"><br>
-                <label for="esmalte">Esmalte:</label><br>
-                <input type="text" class="inputs" id="esmalteInput" name="esmalte"><br>
-                <label for="linea">Linea de diseño:</label><br>
-                <input type="text" class="inputs" id="lineaInput" name="linea"><br>
-                <!-- <label for="imagen">Adjuntar imagen:</label><br>
-                <input type="text" class="inputs" id="imagenInput" name="imagen"> -->
-            </form>
-            <div class="btnBoxForm">
-                <button id="guardarDatosBtn">Guardar</button>
+    <main class="main-contacto">
+        <div class="contacto">
+            <div class="contacto__informacion">
+                <h1 class="animate__animated animate__backInLeft">Contacto</h1>
+                <p class="contacto__texto" data-aos="flip-up">
+                    <em>Si desea comunicarse con nosotros o realizar alguna consulta puede escribirnos llenando el
+                        formulario.</em>
+                </p>
+                <p data-aos="flip-up">
+                    <i>Muchas gracias.</i>
+                    <b>AVR Cerámica.<b>
+                </p>
+            </div>
+            <div class="contacto__form">
+                <h2 class="tituloForm">Formulario de consulta</h2>
+                <form id="myForm">
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" class="inputs" id="nombresImput" name="nombre"><br>
+                    <label for="consulta">Ingrese consulta:</label><br>
+                    <input type="text" class="inputs" id="consultaImput" name="consulta"><br>
+                    <label for="telefono">Teléfono de contacto</label><br>
+                    <input type="text" class="inputs" id="telefonoImput" name="telefono"><br>
+                    <div class="contacto__datos"><label for="linea de productos">Línea de Productos</label><br>
+                        <select name="linea de productos" id="lineasImput" class="barra-texto">
+                            <option value="lisa">Lisa</option>
+                            <option value="flores">Flores</option>
+                            <option value="mariposas">Mariposas</option>
+                        </select></div><br>
+                </form>
                 <button id="limpiarForm" class="boton">Limpiar</button>
+                <button id="guardarDatosBtn">Enviar datos</button>
             </div>
-        </div>
-        <div class="boxBotonesBusqVer">
-            <div>
-                <button id="botonVerCatalogo" class="boton">Ver Catálogo</button>
-                <button id="botonOcultarCatalogo" class="boton">Ocultar Catálogo</button>
-            </div>
-            <form class="d-flex">
-                <input id="buscador" class="inputs" placeholder="Nombre del producto" aria-label="Search">
-                <button id="btnBuscar" class="botonInvertido">Buscar</button>
-            </form>
         </div>
     </main>
-    <section>
-        <div id="productos"></div>
-    </section>
-    <!--Modal Carrito-->
-    <div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: Open+Sans;" id="exampleModalLabel">Carrito de Compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="modal-body">
-
-                </div>
-                <div class="row ml-ato">
-                    <p id="precioTotal"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" style="background-color:#1e1e24; font-family: Nunito;" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" style="background-color: #006c67; font-family: Nunito;" data-bs-dismiss="modal"
-                        class="btn btn-success" id="botonFinalizarCompra">Finalizar Compra</button>
-                </div>
-            </div>
+    <!-- SECTION DE LA PÁGINA -->
+    <section class="section-contacto">
+        <div>
+            <img src="../img/img-pag-contacto-rec.jpg" class="img__contacto" alt="bandeja corazón pajarito">
         </div>
-    </div>
+    </section>
     <footer id="footerStyle">
         <div class="boxDarkMode">
             <button id="botonDarkMode" class="boton">Dark</button><br><br>
@@ -123,7 +106,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="miarchivo.js"></script>
+    <script src="contacto.js"></script>
 </body>
 
 </html>

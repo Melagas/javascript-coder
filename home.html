@@ -54,63 +54,28 @@
             </div>
         </nav>
     </header>
-    <main class="mainEstilo">
-        <div class="boxConsulta">
-            <h2 class="tituloForm">Ingresar producto nuevo</h2>
-            <form id="myForm">
-                <label for="nombre">Nombre del producto:</label><br>
-                <input type="text" class="inputs" id="nombreInput" name="nombre"><br>
-                <label for="precio">Precio:</label><br>
-                <input type="text" class="inputs" id="precioInput" name="precio"><br>
-                <label for="esmalte">Esmalte:</label><br>
-                <input type="text" class="inputs" id="esmalteInput" name="esmalte"><br>
-                <label for="linea">Linea de diseño:</label><br>
-                <input type="text" class="inputs" id="lineaInput" name="linea"><br>
-                <!-- <label for="imagen">Adjuntar imagen:</label><br>
-                <input type="text" class="inputs" id="imagenInput" name="imagen"> -->
-            </form>
-            <div class="btnBoxForm">
-                <button id="guardarDatosBtn">Guardar</button>
-                <button id="limpiarForm" class="boton">Limpiar</button>
+    <main class="main-index">
+        <article class="cuerpo">
+            <div class="cuerpo__texto">
+                <h1 class="animate__animated animate__backInLeft">Home</h1>
+                <p data-aos="zoom-in">
+                    <em><strong>AVR Cerámica</strong> es un espacio donde el arte y la imaginación se combinan para
+                        recrear
+                        productos con
+                        un grado de detalle y dedicación que acompañan y decoran el día a día. Uniendo elementos de
+                        la
+                        naturaleza
+                        donde los colores, las formas y curvas se fusionan.</em>
+                </p>
+                <p data-aos="zoom-in">
+                    <em><strong>Hecho a mano y con amor.</strong></em>
+                </p>
             </div>
-        </div>
-        <div class="boxBotonesBusqVer">
-            <div>
-                <button id="botonVerCatalogo" class="boton">Ver Catálogo</button>
-                <button id="botonOcultarCatalogo" class="boton">Ocultar Catálogo</button>
+            <div data-aos="zoom-out">
+                <img src="img/foto-pagina-principal.jpg" class="cuerpo__img" alt="Frutera de cerámica con un picaflor">
             </div>
-            <form class="d-flex">
-                <input id="buscador" class="inputs" placeholder="Nombre del producto" aria-label="Search">
-                <button id="btnBuscar" class="botonInvertido">Buscar</button>
-            </form>
-        </div>
+        </article>
     </main>
-    <section>
-        <div id="productos"></div>
-    </section>
-    <!--Modal Carrito-->
-    <div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: Open+Sans;" id="exampleModalLabel">Carrito de Compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="modal-body">
-
-                </div>
-                <div class="row ml-ato">
-                    <p id="precioTotal"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" style="background-color:#1e1e24; font-family: Nunito;" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" style="background-color: #006c67; font-family: Nunito;" data-bs-dismiss="modal"
-                        class="btn btn-success" id="botonFinalizarCompra">Finalizar Compra</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <footer id="footerStyle">
         <div class="boxDarkMode">
             <button id="botonDarkMode" class="boton">Dark</button><br><br>

@@ -54,63 +54,49 @@
             </div>
         </nav>
     </header>
-    <main class="mainEstilo">
-        <div class="boxConsulta">
-            <h2 class="tituloForm">Ingresar producto nuevo</h2>
-            <form id="myForm">
-                <label for="nombre">Nombre del producto:</label><br>
-                <input type="text" class="inputs" id="nombreInput" name="nombre"><br>
-                <label for="precio">Precio:</label><br>
-                <input type="text" class="inputs" id="precioInput" name="precio"><br>
-                <label for="esmalte">Esmalte:</label><br>
-                <input type="text" class="inputs" id="esmalteInput" name="esmalte"><br>
-                <label for="linea">Linea de diseño:</label><br>
-                <input type="text" class="inputs" id="lineaInput" name="linea"><br>
-                <!-- <label for="imagen">Adjuntar imagen:</label><br>
-                <input type="text" class="inputs" id="imagenInput" name="imagen"> -->
-            </form>
-            <div class="btnBoxForm">
-                <button id="guardarDatosBtn">Guardar</button>
-                <button id="limpiarForm" class="boton">Limpiar</button>
+    <main class="main-galeria">
+        <div class="galeria">
+            <div class="galeria__titulo">
+                <h1 class="animate__animated animate__backInLeft" style="margin: .5rem;">Galería</h1>
             </div>
-        </div>
-        <div class="boxBotonesBusqVer">
-            <div>
-                <button id="botonVerCatalogo" class="boton">Ver Catálogo</button>
-                <button id="botonOcultarCatalogo" class="boton">Ocultar Catálogo</button>
+            <div class="galeria__presentacion">
+                <h2 class="galeria__h2">Consultar disponibilidad por piezas de galería</h2>
             </div>
-            <form class="d-flex">
-                <input id="buscador" class="inputs" placeholder="Nombre del producto" aria-label="Search">
-                <button id="btnBuscar" class="botonInvertido">Buscar</button>
-            </form>
         </div>
     </main>
-    <section>
-        <div id="productos"></div>
-    </section>
-    <!--Modal Carrito-->
-    <div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: Open+Sans;" id="exampleModalLabel">Carrito de Compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- SECTION DE LA PÁGINA -->
+    <section class="section-galeria">
+        <article class="galeria__fotos">
+            <div class="galeria__fila-1">
+                <div title="Puquitos para café" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/puquitos.jpg" class="galeria__img" alt="puquitos para café">
                 </div>
-                <div class="modal-body" id="modal-body">
-
+                <div title="Taza Naranja" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/taza-naranja.jpg" class="galeria__img" alt="taza taza naranja">
                 </div>
-                <div class="row ml-ato">
-                    <p id="precioTotal"></p>
+                <div title="Juego de aceitera y vinagrera" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/juego-aceites.jpg" class="galeria__img" alt="juego de aceite y vinagre">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" style="background-color:#1e1e24; font-family: Nunito;" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" style="background-color: #006c67; font-family: Nunito;" data-bs-dismiss="modal"
-                        class="btn btn-success" id="botonFinalizarCompra">Finalizar Compra</button>
+                <div title="Taza azul con estrellas" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/taza-azul.jpg" class="galeria__img" alt="taza azul con estrellas">
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="galeria__fila-2">
+                <div title="Bandeja y mate con pajarito" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/juego-mate-bandeja.JPG" class="galeria__img" alt="bandeja y mate con pajarito">
+                </div>
+                <div title="Ensladera verde" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/ensaladera-verde.jpg" class="galeria__img" alt="ensaladera verde">
+                </div>
+                <div title="Taza Amarilla" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/taza-amarilla.jpg" class="galeria__img" alt="taza amarilla">
+                </div>
+                <div title="Taza verde" class="efectos__img" data-aos="zoom-in-up">
+                    <img src="../img/taza-verde-marron.jpg" class="galeria__img" alt="taza verde y marrón">
+                </div>
+            </div>
+        </article>
+    </section>
     <footer id="footerStyle">
         <div class="boxDarkMode">
             <button id="botonDarkMode" class="boton">Dark</button><br><br>

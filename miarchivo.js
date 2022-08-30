@@ -1,4 +1,4 @@
-//Dark - Light mode
+//MODO DARK Y LIGHT//
 let btnDarkMode = document.getElementById("botonDarkMode")
 let btnLightMode = document.getElementById("botonLightMode")
 let darkMode
@@ -28,6 +28,7 @@ eliminarModo.addEventListener("click", () => {
     localStorage.removeItem("darkMode")
 })
 
+//PRODUCTOS//
 //Declaración de la clase
 class Productos {
     constructor(id, nombre, precio, esmalte, linea, imagen) {
@@ -82,6 +83,8 @@ console.log(c)
 console.log(stock)
 
 //Elementos DOM 
+let inputBuscar = document.getElementById("buscador")
+let btnBuscar = document.getElementById("btnBuscar")
 let botonCarrito = document.getElementById("botonCarrito")
 let modalBody = document.getElementById("modal-body")
 let botonFinalizarCompra = document.getElementById("botonFinalizarCompra")
@@ -89,8 +92,7 @@ let parrafoCompra = document.getElementById('precioTotal')
 let acumulador
 let divProductos = document.getElementById("productos")
 divProductos.setAttribute("class", "productosEstilos")
-let inputBuscar = document.getElementById("buscador")
-let btnBuscar = document.getElementById("btnBuscar")
+
 
 //FUNCIONES Y BOTONES 
 //Funcion mostrar catálogo
@@ -206,7 +208,7 @@ function limpiarFormulario() {
 const limpiarForm = document.getElementById("limpiarForm")
 limpiarForm.addEventListener("click", limpiarFormulario)
 
-//Capturo guardarLibro botón y asignamos evento
+//Capturo guardarProducto botón y asignamos evento
 const guardarBtn = document.getElementById("guardarDatosBtn")
 guardarBtn.addEventListener("click", guardarProducto)
 //se agregó Toastify para mostrar que al tocar guardar el producto se guardó con exito
@@ -346,3 +348,6 @@ function finalizarCompra(){
     botonFinalizarCompra.addEventListener('click',()=>{
         finalizarCompra()
     })
+
+   
+

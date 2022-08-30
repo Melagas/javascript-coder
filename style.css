@@ -1,4 +1,4 @@
-/*Externos*/
+/*EXTERNOS*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
@@ -8,40 +8,31 @@
     box-sizing: border-box;
 }
 
-#footerStyle{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* ANIMACIONES */
+.boton:hover {
     background-color: #8f2d56;
+    transition-duration: .4s;
 }
 
-#liStyle{
-display: flex;
-flex-direction: row;
-justify-content: center;
+.botonInvertido:hover {
+    background-color: #8f2d56;
+    transition-duration: .4s;
 }
 
-#colorBlack{
-    color: #0d0106;
-    font-weight: bold;
-    font-family: Nunito;
-    padding-right: 5rem;
+#guardarDatosBtn:hover {
+    background-color: #8f2d56;
+    transition-duration: .4s;
 }
 
-.tituloCard {
-    color: #0d0106;
+#botonCarrito:hover {
+    background-color: #8f2d56;
+    transition-duration: .4s;
 }
 
-#color-modal {
-    color: #0d0106;
-}
-
-#exampleModalLabel {
-    color: #0d0106;
-}
-
-#colorP {
-    color: #0d0106;
+/* NORMALIZACIÓN */
+h5 {
+    display: flex;
+    justify-content: center;
 }
 
 body {
@@ -49,10 +40,32 @@ body {
     color: #0d0106;
 }
 
-h5 {
+form {
+    background-color: #f8afc9;
+    margin: .5em;
+    border-radius: .5em;
+    padding: .7rem;
+    color: #fff8f0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff8f0;
+}
+
+p {
+    margin: .2rem;
+}
+
+/*HADER*/
+.logo {
     display: flex;
     justify-content: center;
+}
 
+.logo__image {
+    width: 16em;
+    cursor: pointer;
 }
 
 .container-fluid {
@@ -63,18 +76,118 @@ h5 {
     align-content: center;
 }
 
+/* NAV */
+#colorBlack {
+    color: #0d0106;
+    font-weight: bold;
+    font-family: Nunito;
+    padding-right: 5rem;
+}
+
 #styleUl {
     margin-bottom: 0;
 }
 
-.logo {
+/*MAIN*/
+.mainEstilo {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.tituloForm {
+    font-family: Nunito;
+    align-content: center;
+}
+
+.boxConsulta {
+    font-family: "Open Sans";
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.inputs {
+    background-color: #fff8f0;
+    font-family: "Open Sans";
+    border-radius: .5em;
+    border: 2px solid transparent;
+}
+
+/* SECTION */
+.productosEstilos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    align-content: center;
+    align-items: center;
+    border-color: #8f2d56;
+    background-color: #fff8f0;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: .5em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.logo__image {
-    width: 16em;
-    cursor: pointer;
+.tituloCard {
+    font-family: Nunito;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0%;
+    color: #0d0106;
+}
+
+.imgCard {
+    width: auto;
+    height: 20em;
+    border-radius: .5em;
+    margin: .5rem;
+}
+
+.precioCard {
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+.lineaCard {
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+.esmalteCard {
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+#colorP {
+    color: #0d0106;
+}
+
+/* FOOTER */
+#footerStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #8f2d56;
 }
 
 .boxDarkMode {
@@ -92,37 +205,34 @@ h5 {
     color: #0d0106;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* CARRITO */
+#styleMensajeCarrito {
+    font-family: Nunito;
+    color: #0d0106;
 }
 
-a {
-    text-decoration: none;
-    color: #fff8f0;
+#styleImporte {
+    color: #0d0106;
 }
 
-p {
-    margin: .2rem;
+#color-modal {
+    color: #0d0106;
 }
 
-.inputs {
-    background-color: #fff8f0;
-    font-family: "Open Sans";
-    border-radius: .5em;
-    border: 2px solid transparent;
+#exampleModalLabel {
+    color: #0d0106;
 }
 
-.boxTituloBoton {
+/* BOTONES */
+.boxBotonesBusqVer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
 }
 
-.estiloBtnCarrito {
-    width: 5em;
-    margin: 1rem;
+.btnBoxForm {
+    display: flex;
+    flex-direction: row;
 }
 
 .boton {
@@ -170,9 +280,9 @@ p {
     border: 2px solid transparent;
 }
 
-.tituloForm {
-    font-family: Nunito;
-    align-content: center;
+#botonCarrito {
+    background-color: #1e1e24;
+    border-color: #1e1e24;
 }
 
 #guardarDatosBtn {
@@ -190,146 +300,147 @@ p {
     border: 2px solid transparent;
 }
 
-#guardarDatosBtn:hover {
-    background-color: #8f2d56;
-    transition-duration: .4s;
+.estiloBtnCarrito {
+    width: 5em;
+    margin: 1rem;
 }
 
-form {
-    background-color: #f8afc9;
-    margin: .5em;
-    border-radius: .5em;
-    padding: .7rem;
-    color:#fff8f0;
-}
-
-.boxConsulta {
-    font-family: "Open Sans";
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-}
-
-.botonCarrito:hover {
-    background-color: #8f2d56;
-    transition-duration: .4s;
-}
-
-.boton:hover {
-    background-color: #8f2d56;
-    transition-duration: .4s;
-}
-
-.botonInvertido:hover {
-    background-color: #8f2d56;
-    transition-duration: .4s;
-}
-
-#styleImporte {
-    color: #0d0106;
-}
-
-#tituloPrincipal {
-    color: #8f2d56;
-    font-size: 2em;
+/* HOME */
+.cuerpo {
+    font-size: 62.5%;
     display: flex;
     justify-content: center;
-    align-content: center;
-    font-family: Nunito;
-    padding: 2rem;
-    font-weight: bolder;
-}
+    align-items: center; }
+    .cuerpo__texto {
+      text-align: center;
+      font-weight: normal;
+      font-size: 2.4em;
+      font-family: "Open Sans";
+      padding-left: 5rem;
+      padding-right: 5rem; }
+    .cuerpo__img {
+      width: 55em;
+      height: auto; }
 
-.productosEstilos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#botonCarrito {
-    background-color: #1e1e24;
-    border-color: #1e1e24;
-}
-
-#botonCarrito:hover {
-    background-color: #8f2d56;
-    transition-duration: .4s;
-}
-
-#navStyle{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-}
-
-.cards {
+/* SOBREMI */
+.sobremi {
+    font-size: 62.5%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    border-style: solid;
-    align-content: center;
-    align-items: center;
-    border-color: #8f2d56;
-    background-color: #fff8f0;
-    margin: .5rem;
-    padding: .5rem;
-    border-radius: .5em;
-}
+    align-content: center; }
+    .sobremi__texto {
+      text-align: center;
+      font-weight: normal;
+      font-size: 2.4em;
+      font-family: "Open Sans";
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin-top: 1.5rem; }
+    .sobremi__picture {
+      align-items: center; }
+    .sobremi__img {
+      width: 50em;
+      height: auto; }
+    .sobremi__img-presentacion {
+      width: 5em;
+      height: 5em;
+      border-radius: 10em; }
 
-.tituloCard {
-    font-family: Nunito;
+/* GALERIA */
+.galeria {
+    font-size: 62.5%;
+    width: 100%;
+    height: 15em; }
+    .galeria__titulo {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .galeria__presentacion {
+      margin-left: 3rem;
+      margin-right: 3rem; }
+    .galeria__h2 {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      font-weight: bold;
+      background-color: #8f2d56;
+      font-family: "Open Sans";
+      font-size: 1.5em;
+      color: #fdfff7;
+      border-radius: .5em;
+      padding: 1rem; }
+    .galeria__fotos {
+      padding-bottom: 1rem; }
+    .galeria__img {
+      width: auto;
+      height: 15em;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-radius: .5em; }
+    .galeria__fila-1 {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      background-color:#fbf4e0;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-bottom: 1rem;
+      border-radius: .5em; }
+    .galeria__fila-2 {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      background-color: #fbf4e0;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      border-radius: .5em; }
+
+/* CONTACTO */
+.contacto {
+    font-size: 62.5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 0%;
-}
-
-.imgCard {
-    width: auto;
-    height: 20em;
-    border-radius: .5em;
-    margin: .5rem;
-}
-
-.precioCard {
-    text-align: center;
-    font-family: "Open Sans";
-}
-
-.lineaCard {
-    text-align: center;
-    font-family: "Open Sans";
-}
-
-.esmalteCard {
-    text-align: center;
-    font-family: "Open Sans";
-}
-
-.mainEstilo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-content: center;
-    align-items: center;
-    padding: 4rem;
 }
+    
+.contacto__informacion {
 
-.btnBoxForm {
-    display: flex;
-    flex-direction: row;
-}
+      text-align: center;
+      font-weight: normal;
+      font-size: 2.4em;
+      font-family: "Open Sans";
+      padding:1rem;
+      margin: 1rem;
+      padding-top: 5rem;
+ }
 
-#styleMensajeCarrito {
-    font-family: Nunito;
-    color: #0d0106;
-}
+.contacto__texto {
+   
+      text-align: center;}
 
-.boxFormBtn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+.contacto__form {
+      color: #fdfff7;
+      background-color: #f8afc9;
+      font-family: "Open Sans";
+      font-size: 1.5em;
+      border-radius: .5em;
+      padding: 1rem;
+      margin:1rem;}
+
+.contacto__botones {
+      display: flex;
+      font-weight: bold;
+      font-family: "Open Sans"; }
+
+
+  .img__contacto {
+    height: 30em;
+    width: 100%; }
+
+    .tituloForm{
+        font-size: 1.7em;
+        text-align: center;
+    }

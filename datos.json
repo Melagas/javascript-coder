@@ -1,0 +1,44 @@
+[
+    {
+       "id": 1,
+       "nombre":"Gaston",
+       "consulta":"Me gustaria recibir informacíon sobre modelos de tazas",
+       "telefono":12345678,
+       "Linea":"Flores"
+    }, 
+    {
+      "id": 2,
+      "nombre":"Juan",
+      "consulta":"Me gustaria recibir informacíon sobre combos",
+      "telefono":54345655,
+      "Linea":"Animales"
+    },
+    {
+      "id": 3,
+       "nombre":"Victoria",
+       "consulta":"Me gustaria recibir informacíon sobre ubicación física",
+       "telefono":434343434,
+       "Linea":"Lisa"
+    },
+    {
+      "id": 4,
+      "nombre":"Miriam",
+      "consulta":"Me gustaria recibir informacíon sobre stock disponible",
+      "telefono":878787878,
+      "Linea":"Animales"
+    },
+    {
+      "id": 5,
+      "nombre":"Cecilia",
+      "consulta":"Me gustaria recibir informacíon sobre provoleteras",
+      "telefono":29876653,
+      "Linea":"Flores"
+    },
+    {
+      "id": 6,
+      "nombre":"Pedro",
+      "consulta":"Me gustaria recibir informacíon sobre azucareras",
+      "telefono":94304903,
+      "Linea":"Lisa"
+    }
+   ]
