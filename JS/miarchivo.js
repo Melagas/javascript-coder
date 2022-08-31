@@ -46,7 +46,7 @@ class Productos {
 }
 
 //Instanciación de objetos
-const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "img/mate-flores.jpg")
+const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "/img/mate-flores.jpg")
 const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa", "img/azucarera-mariposas.jpg")
 const producto3 = new Productos(3, "Taza naranja", 1500, "Nacional", "Lisa", "img/taza-naranja.jpg")
 const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa", "img/provoletera.jpg")
@@ -102,7 +102,7 @@ function mostrarCatalogo() {
         let nuevoProducto = document.createElement("div")
         nuevoProducto.innerHTML = `<article id="${producto.id}" class="cards">
         <h3 class="tituloCard">${producto.nombre}</h3>
-        <img src="${producto.imagen}" alt="" class="imgCard">
+        <img src="../${producto.imagen}" alt="" class="imgCard">
         <div class="content" id="colorP">
             <p class="precioCard"><b>Precio:</b>  ${producto.precio}</p>
             <p class="lineaCard"><b>Linea:</b> ${producto.linea}</p>
@@ -238,7 +238,7 @@ function cargarProductosCarrito(productosDelStorage) {
     productosDelStorage.forEach((productoCarrito) => {
         modalBody.innerHTML += `
             <div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 500px">
-                <img class="card-img-top" src="${productoCarrito.imagen}" alt="${productoCarrito.nombre}">
+                <img class="card-img-top" src="../${productoCarrito.imagen}" alt="${productoCarrito.nombre}">
                 <div class="card-body" id="color-modal">
                         <h4 style="font-family: Nunito;" class="card-title">${productoCarrito.nombre}</h4>
                         <p style="font-family: Nunito;" class="card-text">$${productoCarrito.precio}</p> 

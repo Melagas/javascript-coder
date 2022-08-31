@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVR Cerámica | Productos</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,7 +17,7 @@
 <body id="estiloBody">
     <header>
         <div class="logo">
-            <a href=""> <img src="img/logo-sinfondo.png" alt="avrceramica" class="logo__image">
+            <a href=""> <img src="../img/logo-sinfondo.png" alt="avrceramica" class="logo__image">
             </a>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #fff8f0;">
@@ -29,26 +29,26 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto" style="justify-content:space-around;">
                         <li class="nav-item">
-                            <a class="nav-link" id="colorBlack" href="home.html">Home</a>
+                            <a class="nav-link" id="colorBlack" href="./home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="colorBlack" href="sobremi.html">Sobre Mí</a>
+                            <a class="nav-link" id="colorBlack" href="./sobremi.html">Sobre Mí</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="colorBlack" href="galeria.html">Galería</a>
+                            <a class="nav-link" id="colorBlack" href="./galeria.html">Galería</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="colorBlack" href="contacto.html">Contacto</a>
+                            <a class="nav-link" id="colorBlack" href="./contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="colorBlack" href="index.html">Productos</a>
+                            <a class="nav-link" id="colorBlack" href="./index.html">Productos</a>
                         </li>
                     </ul>
                     <ul id="styleUl" className="navbar-nav me-auto">
-                        <li className="nav-item">
+                        <!-- <li className="nav-item">
                             <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModal"
                                 class="btn btn-secondary"><i class="fas fa-shopping-cart fa-1x"></i></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -57,7 +57,7 @@
     <main class="main-contacto">
         <div class="contacto">
             <div class="contacto__informacion">
-                <h1 class="animate__animated animate__backInLeft">Contacto</h1>
+                <h1 class="animate__animated animate__backInLeft"><strong>Contacto</strong></h1>
                 <p class="contacto__texto" data-aos="flip-up">
                     <em>Si desea comunicarse con nosotros o realizar alguna consulta puede escribirnos llenando el
                         formulario.</em>
@@ -67,24 +67,26 @@
                     <b>AVR Cerámica.<b>
                 </p>
             </div>
-            <div class="contacto__form">
-                <h2 class="tituloForm">Formulario de consulta</h2>
-                <form id="myForm">
-                    <label for="nombre">Nombre:</label><br>
-                    <input type="text" class="inputs" id="nombresImput" name="nombre"><br>
-                    <label for="consulta">Ingrese consulta:</label><br>
-                    <input type="text" class="inputs" id="consultaImput" name="consulta"><br>
-                    <label for="telefono">Teléfono de contacto</label><br>
-                    <input type="text" class="inputs" id="telefonoImput" name="telefono"><br>
-                    <div class="contacto__datos"><label for="linea de productos">Línea de Productos</label><br>
-                        <select name="linea de productos" id="lineasImput" class="barra-texto">
-                            <option value="lisa">Lisa</option>
-                            <option value="flores">Flores</option>
-                            <option value="mariposas">Mariposas</option>
-                        </select></div><br>
-                </form>
-                <button id="limpiarForm" class="boton">Limpiar</button>
-                <button id="guardarDatosBtn">Enviar datos</button>
+            <div>
+                <h2 class="tituloFormContacto">Formulario de consulta</h2>
+                <div class="contacto__form">
+                    <form id="myForm">
+                        <label for="nombre">Nombre:</label><br>
+                        <input type="text" class="inputs" id="nombresImput" name="nombre"><br>
+                        <label for="consulta">Ingrese consulta:</label><br>
+                        <input type="text" class="inputs" id="consultaImput" name="consulta"><br>
+                        <label for="telefono">Teléfono de contacto</label><br>
+                        <input type="text" class="inputs" id="telefonoImput" name="telefono"><br>
+                        <div class="contacto__datos"><label for="linea de productos">Línea de Productos</label><br>
+                            <select name="linea de productos" id="lineasImput" class="barra-texto">
+                                <option value="lisa">Lisa</option>
+                                <option value="flores">Flores</option>
+                                <option value="mariposas">Mariposas</option>
+                            </select></div><br>
+                    </form>
+                    <button id="limpiarForm" class="boton">Limpiar</button>
+                    <button id="guardarDatosBtn">Enviar datos</button>
+                </div>
             </div>
         </div>
     </main>
@@ -102,11 +104,12 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="contacto.js"></script>
+    <script src="../JS/contacto.js"></script>
 </body>
 
 </html>

@@ -50,7 +50,7 @@ class Datos {
 
 //Es la ruta relativa del HTML a JSON utilizando FETCH
 let info = []
-fetch("datos.json")
+fetch("../JSON/datos.json")
 .then(response => response.json())
 .then(data =>{
     console.log(data)

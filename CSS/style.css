@@ -9,6 +9,19 @@
 }
 
 /* ANIMACIONES */
+
+.efectos__img:hover .galeria__img {
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.nav-item :hover {
+    text-decoration: underline .3em #f8afc9;
+    color: #0d0106;
+}
+
 .boton:hover {
     background-color: #8f2d56;
     transition-duration: .4s;
@@ -89,7 +102,18 @@ p {
 }
 
 /*MAIN*/
-.mainEstilo {
+.tituloProductos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: .5rem;
+    margin: .5rem;
+
+}
+
+.articleEstilo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -440,7 +464,10 @@ p {
     height: 30em;
     width: 100%; }
 
-    .tituloForm{
-        font-size: 1.7em;
+    .tituloFormContacto{
+        font-size: 2em;
         text-align: center;
+        padding: .5rem;
+        margin: .5rem;
+        text-decoration: underline #f8afc9 .2em;
     }
