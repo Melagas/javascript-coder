@@ -51,15 +51,15 @@ class Datos {
 //Es la ruta relativa del HTML a JSON utilizando FETCH
 let info = []
 fetch("../JSON/datos.json")
-.then(response => response.json())
-.then(data =>{
-    console.log(data)
-    for(let dato of data){
-        let datoNuevo = new Datos(dato.idd, dato.nombres, dato.consulta, dato.telefono, dato.lineas)
-        info.push(datoNuevo)
-    }
-    
-})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        for (let dato of data) {
+            let datoNuevo = new Datos(dato.idd, dato.nombres, dato.consulta, dato.telefono, dato.lineas)
+            info.push(datoNuevo)
+        }
+
+    })
 
 //AWAIT Y ASYNC
 // const cargarInfo = async () =>{
@@ -108,6 +108,3 @@ function limpiarFormulario() {
 }
 const limpiarForm = document.getElementById("limpiarForm")
 limpiarForm.addEventListener("click", limpiarFormulario)
-
-
-

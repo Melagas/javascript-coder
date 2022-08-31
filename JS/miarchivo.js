@@ -95,7 +95,7 @@ divProductos.setAttribute("class", "productosEstilos")
 
 
 //FUNCIONES Y BOTONES 
-//Funcion mostrar catálogo
+//Función mostrar catálogo
 function mostrarCatalogo() {
     divProductos.innerHTML = ""
     stock.forEach((producto) => {
@@ -122,7 +122,7 @@ function mostrarCatalogo() {
     })
 }
 
-//Funcion de agregar al carrito
+//Función de agregar al carrito
 function agregarAlCarrito(producto) {
     console.log(`El producto ${producto.nombre} con N* de identificación ${producto.id} fue agregado al carrito`)
     let productoAgregado = productosEnCarrito.find((elem) => (elem.id == producto.id))
@@ -185,7 +185,7 @@ mostrarCatalogoBtn.addEventListener("click", (() => {
 }))
 
 
-//Función que permita al usuario agregar un libro 
+//Función que permita al usuario agregar un producto 
 function guardarProducto() {
     let nombreInput = document.getElementById("nombreInput")
     let precioInput = document.getElementById("precioInput")
@@ -201,10 +201,10 @@ function guardarProducto() {
     myForm.reset(); //Agregué un reset al boton de guardar asi se limpia luego de almacenar en el localStorage
 }
 
+//Función de limpiar formulario
 function limpiarFormulario() {
     document.getElementById("myForm").reset(); //Agregué una funcion de limpiar el documento antes de ser mandado para mayor comodiad del usuario
 }
-
 const limpiarForm = document.getElementById("limpiarForm")
 limpiarForm.addEventListener("click", limpiarFormulario)
 
@@ -230,7 +230,6 @@ let arrayJSON = JSON.stringify(stock)
 localStorage.setItem("arrayJSON", arrayJSON)
 let arrayParse = JSON.parse(localStorage.getItem("arrayJSON"))
 console.log(arrayParse)
-
 
 //Función de cargar y mostrar productos en carrito
 function cargarProductosCarrito(productosDelStorage) {
@@ -287,9 +286,54 @@ function compraTotal(...productosTotal) {
         parrafoCompra.innerHTML = `<p id="styleMensajeCarrito">El carrito esta vacio</p>`
 }
 
+//Función finalizar compra  y botones de confirmación
+function finalizarCompra() {
+    Swal.fire({
+        title: 'Está seguro de realizar la compra',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+        confirmButtonColor: '#006c67',
+        cancelButtonColor: '#8f2d56',
+    }).then((result) => {
+        let DateTime = luxon.DateTime
+        const dt = DateTime.now()
+        let fecha = `Siendo las ${dt.toLocaleString(DateTime.TIME_SIMPLE)} del ${dt.toLocaleString(DateTime.DATE_FULL)}`
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Compra exitosa',
+                icon: 'success',
+                confirmButtonColor: '#006c67',
+                text: `Muchas gracias por su compra`,
+                footer: `<p>${fecha} pronto nos comunicaremos con usted</p>`
+            })
+            //Ahora pusimos el código dentro del THEN para que se ejecute en caso de que result sea confirmado. 
+            productosEnCarrito = []
+            localStorage.removeItem('carrito')
+            //Mostramos total
+            console.log(`El total de su compra es ${acumulador}`)
+            //Volvemos a cargar el modal con el array vacío por lo que quedará sin nada
+            cargarProductosCarrito(productosEnCarrito)
+        } else {
+            Swal.fire({
+                title: 'Compra no realizada',
+                icon: 'info',
+                text: `La compra no ha sido realizada! Atención sus productos siguen en el carrito :D`,
+                confirmButtonColor: '#006c67',
+                timer: 3500
+            })
+        }
+    })
+}
+
+botonFinalizarCompra.addEventListener('click', () => {
+    finalizarCompra()
+})
+
 //Boton de busqueda
 btnBuscar.addEventListener('click', () => {
-    //function de buscado
+    //función de buscado
     event.preventDefault()
     console.log("click");
     console.log(inputBuscar.value.toLowerCase());
@@ -303,51 +347,3 @@ btnBuscar.addEventListener('click', () => {
 
     }
 })
-
-//Función finalizar compra  y botones de confirmación
-function finalizarCompra(){
-    Swal.fire({
-        title: 'Está seguro de realizar la compra',
-        icon: 'info',
-        showCancelButton: true,
-        confirmButtonText: 'Sí',
-        cancelButtonText: 'No',
-        confirmButtonColor: '#006c67',
-        cancelButtonColor: '#8f2d56',
-    }).then((result) => {
-        let DateTime = luxon.DateTime
-        const dt = DateTime.now()
-        let fecha = `Siendo las ${dt.toLocaleString(DateTime.TIME_SIMPLE)} del ${dt.toLocaleString(DateTime.DATE_FULL)}`
-    if (result.isConfirmed) {
-        Swal.fire({
-            title: 'Compra exitosa',
-            icon: 'success',
-            confirmButtonColor: '#006c67',
-            text: `Muchas gracias por su compra`,
-            footer: `<p>${fecha} pronto nos comunicaremos con usted</p>`
-        })
-        //Ahora pusimos el código dentro del THEN para que se ejecute en caso de que result sea confirmado. 
-        productosEnCarrito = []
-        localStorage.removeItem('carrito')
-        //Mostramos total
-        console.log(`El total de su compra es ${acumulador}`)
-        //Volvemos a cargar el modal con el array vacío por lo que quedará sin nada
-        cargarProductosCarrito(productosEnCarrito)
-        }
-        else{
-            Swal.fire({
-                title: 'Compra no realizada',
-                icon: 'info',
-                text: `La compra no ha sido realizada! Atención sus productos siguen en el carrito :D`,
-                confirmButtonColor: '#006c67',
-                timer:3500
-            })
-        }
-    })}
-
-    botonFinalizarCompra.addEventListener('click',()=>{
-        finalizarCompra()
-    })
-
-   
-
