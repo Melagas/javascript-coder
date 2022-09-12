@@ -46,15 +46,15 @@ class Productos {
 }
 
 //Instanciación de objetos
-const producto1 = new Productos(1, "Aceitera y vinagrera", 4000, "Duncan", "Liso", "../img/juego-aceites.jpg")
-const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa", "../img/azucarera-mariposas.jpg")
-const producto3 = new Productos(3, "Taza naranja", 1500, "Nacional", "Lisa", "../img/taza-naranja.jpg")
-const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa", "../img/provoletera.jpg")
-const producto5 = new Productos(5, "Juego de azucarera y yerbera", 3000, "Duncan", "Flores", "../img/azucareras-flores.jpg")
-const producto6 = new Productos(6, "Bandeja ovalada con pajaríto", 1500, "Duncan", "Animales", "../img/bandeja-pajarito.jpg")
-const producto7 = new Productos(7, "Saumerio con flores", 900, "Nacional", "Flores", "../img/saumerio.jpg")
-const producto8 = new Productos(8, "Juego de tazas trigo", 4000, "Duncan", "Flores", "../img/tazas-fores.jpg")
-const producto9 = new Productos(9, "Ensaladera con picaflor", 2500, "Duncan", "Animales", "../img/foto-pagina-principal.jpg")
+const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "img/mate-flores.jpg")
+const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa", "img/azucarera-mariposas.jpg")
+const producto3 = new Productos(3, "Taza naranja", 1500, "Nacional", "Lisa", "img/taza-naranja.jpg")
+const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa", "img/provoletera.jpg")
+const producto5 = new Productos(5, "Juego de azucarera y yerbera", 3000, "Duncan", "Flores", "img/azucareras-flores.jpg")
+const producto6 = new Productos(6, "Bandeja ovalada con pajaríto", 1500, "Duncan", "Animales", "img/bandeja-pajarito.jpg")
+const producto7 = new Productos(7, "Saumerio con flores", 900, "Nacional", "Flores", "img/saumerio.jpg")
+const producto8 = new Productos(8, "Juego de tazas trigo", 4000, "Duncan", "Flores", "img/tazas-fores.jpg")
+const producto9 = new Productos(9, "Ensaladera con picaflor", 2500, "Duncan", "Animales", "img/foto-pagina-principal.jpg")
 
 // //Declarar arrays
 let stock = []
