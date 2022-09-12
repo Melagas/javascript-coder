@@ -46,7 +46,7 @@ class Productos {
 }
 
 //Instanciación de objetos
-const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "/img/mate-flores.jpg")
+const producto1 = new Productos(1, "Mate con flores", 1000, "Duncan", "Flores", "img/mate-flores.jpg")
 const producto2 = new Productos(2, "Azucarera con mariposas", 2000, "Duncan", "Mariposa", "img/azucarera-mariposas.jpg")
 const producto3 = new Productos(3, "Taza naranja", 1500, "Nacional", "Lisa", "img/taza-naranja.jpg")
 const producto4 = new Productos(4, "Provoletera marrón", 1100, "Duncan", "Lisa", "img/provoletera.jpg")

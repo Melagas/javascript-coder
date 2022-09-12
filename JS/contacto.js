@@ -61,17 +61,6 @@ fetch("../JSON/datos.json")
 
     })
 
-//AWAIT Y ASYNC
-// const cargarInfo = async () =>{
-//     const response = await fetch ("datos.json")
-//     const data = await response.json()
-//     for(let dato of data){
-//                 let datoNuevo = new Datos(dato.idd, dato.nombres, dato.consulta, dato.telefono, dato.lineas)
-//                 info.push(datoNuevo)
-//             }
-// }
-// cargarInfo()
-
 //Función de formulario de consulta de datos personales
 function datosPersona() {
     let nombresImput = document.getElementById("nombresImput")
@@ -88,6 +77,7 @@ function datosPersona() {
 //Botón de guardar, formulario de consulta
 const guardarDatosBtn = document.getElementById("guardarDatosBtn")
 guardarDatosBtn.addEventListener("click", datosPersona)
+
 //se agregó Toastify para mostrar que al tocar guardar el producto se guardó con exito
 guardarDatosBtn.addEventListener('click', () => {
     Toastify({
@@ -104,7 +94,8 @@ guardarDatosBtn.addEventListener('click', () => {
 
 //Función de Limpiar formulario
 function limpiarFormulario() {
-    document.getElementById("myForm").reset(); //Agregué una función de limpiar el documento antes de ser mandado para mayor comodiad del usuario
+    //Agregué una función de limpiar el documento antes de ser mandado para mayor comodiad del usuario
+    document.getElementById("myForm").reset();
 }
 const limpiarForm = document.getElementById("limpiarForm")
 limpiarForm.addEventListener("click", limpiarFormulario)
